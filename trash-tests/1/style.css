@@ -1,0 +1,18 @@
+
+*{box-sizing: border-box;}
+body{background:magenta;}
+
+#page {
+  width:40%;
+  height:50vh;
+  border:10px solid red;
+  border-radius: 10px;
+  a-scene {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.a-loader-title {
+  color: red;
+}

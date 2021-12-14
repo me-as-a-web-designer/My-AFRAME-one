@@ -1,0 +1,135 @@
+<html lang="en">
+  <head>
+    <title>tester clickable environment</title>
+    <meta name="description" content="Mouse Click Example - A-Frame">
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@^4.0.0/dist/aframe-event-set-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="JQUERY\input.js"></script>
+  </head>
+  <body>
+    <div id="page">
+
+
+
+      <div id="MyOverlay">
+        <!--------------------------BB user input------------------------>
+        <section id="GetUserInput">
+          <div class="row">
+            <h1>Enter a value in the text box</h1>
+            <input id="testInput" type="text" />
+          </div>
+        </section>
+          
+        <section id="DisplayUserInput">
+          <div id="message">
+            <h4>The value of the text box is:</h4>
+            <p> <span></span></p>
+          </div>
+          </section>
+          <!--------------------------EE user input------------------------>
+
+          <p>This is a paragraph.</p>
+
+          <button class="btn1">Hide</button>
+          <button class="btn2">Show</button>
+
+
+      </div>
+      <!------------------------------------------------------------------------------------------->
+
+
+
+      <a-scene loading-screen="dotsColor: red; backgroundColor: black" embedded>
+
+        <a-entity environment="preset: forest; groundColor: #445; grid: cross"></a-entity>
+        <!------------------------------------------------------------------------------------------->
+
+        <a-entity id="camera" camera="userHeight: 1.6" look-controls wasd-controls cursor="rayOrigin: mouse"></a-entity>
+        <a-entity light="color: #AFA; intensity: 1.5" position="-1 1 0"></a-entity>
+
+        <!------------------------------------------------------------------------------------------->
+
+
+
+        <!------------------------------------------------------------------------------------------->
+        <a-box id="bogota" color="tomato" position="-1 0.5 -3">
+          <a-entity id="movieDescription" color="pink"
+            position="-.5 1 0"
+            text="baseline: top; shader: msdf; anchor: left; 
+            font: https://cdn.aframe.io/examples/ui/Viga-Regular.json; 
+            color: red; 
+            value: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+             ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullam
+             co laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+              in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cup
+              idatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.">
+            </a-entity>
+        </a-box>
+
+
+
+
+        <!------------------------------------------------------------------------------------------->
+
+
+
+        
+        <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9" shadow
+              event-set__enter="_event: mouseenter; color: #026fc9"
+              event-set__leave="_event: mouseleave; color: #4CC3D9">
+          <a-animation attribute="rotation"
+                dur="3000"
+                fill="forwards"
+                to="0 360 0"
+                direction="alternate"
+                begin="click"></a-animation>
+        </a-box>
+        <!------------------------------------------------------------------------------------------->
+
+        <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E" shadow
+                  event-set__enter="_event: mouseenter; color: #026fc9"
+                  event-set__leave="_event: mouseleave; color: #EF2D5E">
+          
+          <!-- This animation begins when the sphere is clicked with the mouse. -->
+          <a-animation attribute="position"
+                dur="1000"
+                fill="forwards"
+                to="0 2.5 -6"
+                direction="alternate"
+                begin="click"></a-animation>
+        </a-sphere>
+
+        <!------------------------------------------------------------------------------------------->
+
+
+</a-scene>
+      
+<!------------------------------------------------------------------------------------------->
+<!------------------------------------------------------------------------------------------->
+<!------------------------------------------------------------------------------------------->
+<!------------------------------------------------------------------------------------------->
+<!------------------------------------------------------------------------------------------->
+<!------------------------------------------------------------------------------------------->
+<!------------------------------------------------------------------------------------------->
+
+<script>
+$('input[type="text"]').on('keydown, keyup', function () {
+  //get a reference to the text input value
+  var texInputValue = $('#testInput').val();
+
+  //show the text input value in the UI
+  $('#message p span').html(texInputValue);
+  $('.bottom-face').css("width", (texInputValue*9));
+});
+</script>
+
+
+      
+    </div>
+ </body>
+
+</html>
