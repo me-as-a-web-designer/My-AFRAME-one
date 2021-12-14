@@ -1,11 +1,10 @@
 ---
-# the title that will appear in the HTML head tag
-layout: wrapper
-title: index home page
+layout: chords
+title: chords  page
 food: pizza
 ---
 
-## Learn Guitar Home page
+## Welcome to chords page
 
 <div class="bacon" markdown="1">
   
