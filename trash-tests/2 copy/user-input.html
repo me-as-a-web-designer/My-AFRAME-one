@@ -17,26 +17,7 @@
 
       <div id="MyOverlay">
         <!--------------------------BB user input------------------------>
-        <section id="GetUserInput">
-          <div class="row">
-            <h1>Enter a value in the text box</h1>
-            <input id="testInput" type="text" />
-          </div>
-        </section>
-          
-        <section id="DisplayUserInput">
-          <div id="message">
-            <h4>The value of the text box is:</h4>
-            <p> <span></span></p>
-          </div>
-          </section>
-          <!--------------------------EE user input------------------------>
-
-          <p>This is a paragraph.</p>
-
-          <button class="btn1">Hide</button>
-          <button class="btn2">Show</button>
-
+        <button type="button" onClick="scaleup()">Scale up</button>
 
       </div>
       <!------------------------------------------------------------------------------------------->
@@ -115,6 +96,8 @@
 <!------------------------------------------------------------------------------------------->
 <!------------------------------------------------------------------------------------------->
 <!------------------------------------------------------------------------------------------->
+
+
 
 <script>
 $('input[type="text"]').on('keydown, keyup', function () {

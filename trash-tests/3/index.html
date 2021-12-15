@@ -1,0 +1,38 @@
+<html lang="en">
+  <head>
+    <title>tester clickable environment</title>
+    <meta name="description" content="Mouse Click Example - A-Frame">
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div id="MyOverlay">hello</div>
+
+ 
+
+    
+<script>
+beer = document.querySelectorAll('.beer');
+
+
+// Examples for position.
+beer.object3D.position.set(11, 22, 3);
+beer.object3D.position.x += 15;
+beer.object3D.position.multiplyScalar(5);
+
+
+
+</script>
+
+<a-scene log="Hello, Scene!">
+
+  <a-box log="Hello, Box!"></a-box>
+
+  <a-sphere class="beer" position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
+
+
+</a-scene>
+
+
+ </body>
+</html>
